@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board Briefing Download</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cookie-consent.css" />
+  <!-- 
+    Google Analytics and Microsoft Clarity are now loaded conditionally
+    by cookie-consent.js based on user's analytics consent preference.
+    See cookie-consent.js for configuration.
+  -->
+</head>
+<body>
+  <header class="site-header navbar">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Insighted</a>
+
+      <nav class="site-nav" id="siteNav" role="navigation" aria-label="Page navigation">
+        <a class="nav-link" href="index.html#home">Exposure</a>
+        <a class="nav-link" href="index.html#decision-accountability-timeline">Scrutiny</a>
+        <a class="nav-link" href="index.html#solution">System</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="index.html#contact">Find out if one decision would hold under scrutiny</a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="briefing-main">
+    <div class="container">
+      <section class="briefing-panel">
+        <div class="briefing-grid">
+          <div class="briefing-left">
+            <p class="eyebrow">Board briefing</p>
+            <h1>Your board briefing is ready</h1>
+            <p class="section-copy">A concise, executive summary of decision evidence and governance issues. Designed for board and counsel review — factual, clear, and audit-oriented.</p>
+
+            <ul class="briefing-list">
+              <li><strong>Executive summary</strong> — key findings and implications</li>
+              <li><strong>Reconstructability risks</strong> — what would be hard to prove later</li>
+              <li><strong>Recommended actions</strong> — governance and compliance next steps</li>
+            </ul>
+          </div>
+
+          <aside class="briefing-cta" aria-labelledby="download-title">
+            <div class="cta-box">
+              <p id="download-status" class="download-status">Preparing your download…</p>
+              <h2 id="download-title">Download briefing</h2>
+              <p class="briefing-cta-copy">A ready-to-share PDF prepared for internal circulation.</p>
+              <a class="button briefing-download" href="./files/board-briefing.pdf" download>Download the board briefing</a>
+              <p class="cta-micro">For internal review before testing a decision.</p>
+
+              <hr class="briefing-divider" />
+              <p class="briefing-alt">Prefer a guided review? <a class="link-underline" href="index.html#contact">Request a private session</a></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("load", function () {
+      const status = document.getElementById("download-status");
+
+      setTimeout(function () {
+        const link = document.createElement("a");
+        link.href = "./files/board-briefing.pdf";
+        link.setAttribute("download", "board-briefing.pdf");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        status.textContent = "Your download should have started.";
+      }, 300);
+    });
+  </script>
+  <script src="script.js"></script>
+  <!-- Cookie Consent System -->
+  <script src="cookie-consent.js"></script>
+
+  <!-- Cookie Consent Banner & Preferences Modal -->
+  <div id="cookie-consent-banner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-content">
+        <h3>Your Privacy</h3>
+        <p>We use cookies to enhance your experience, analyse site usage, and support our marketing efforts. Some cookies are essential for the site to function, while others are optional.</p>
+        <p><strong>Essential cookies:</strong> Always active. These are necessary for the site to work properly.</p>
+        <p><strong>Optional cookies:</strong> You can accept, reject, or customise your preferences at any time.</p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="cookie-accept-all">Accept All</button>
+        <button id="cookie-reject-non-essential">Reject Non-Essential</button>
+        <button id="cookie-manage-preferences">Manage Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookie-preferences-backdrop"></div>
+  <div id="cookie-preferences-modal">
+    <div class="cookie-modal-header">
+      <h2>Cookie Preferences</h2>
+      <button id="cookie-close-preferences" aria-label="Close"><span>×</span></button>
+    </div>
+    
+    <div class="cookie-modal-body">
+      <p class="cookie-modal-description">
+        Manage your cookie preferences below. Essential cookies cannot be disabled as they are required for the site to function.
+      </p>
+
+      <div class="cookie-category cookie-category--necessary">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-necessary" 
+            class="cookie-toggle" 
+            checked 
+            disabled 
+            aria-label="Necessary cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Essential Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies are necessary for the website to function and help with core functionality such as navigation and access to secure areas. The website cannot function properly without these cookies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-analytics" 
+            class="cookie-toggle" 
+            aria-label="Analytics cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Analytics Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies help us understand how visitors use the website. We use analytics tools like Google Analytics and Microsoft Clarity to measure and analyse site performance. This information helps us improve our services.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-functional" 
+            class="cookie-toggle" 
+            aria-label="Functional cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Functional Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies enable enhanced functionality and personalisation, such as remembering preferences or showing relevant content. Without these cookies, some features may be unavailable or work less effectively.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-marketing" 
+            class="cookie-toggle" 
+            aria-label="Marketing cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Marketing Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies are used by marketing and advertising partners to track and measure the effectiveness of marketing campaigns. They may be set by third parties and allow us to show you relevant ads on other websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-modal-footer">
+      <button id="cookie-save-preferences">Save Preferences</button>
+    </div>
+  </div>
+</body>
+</html>

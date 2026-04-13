@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insighted</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cookie-consent.css">
+  <!-- 
+    Google Analytics and Microsoft Clarity are now loaded conditionally
+    by cookie-consent.js based on user's analytics consent preference.
+    See cookie-consent.js for configuration.
+  -->
+</head>
+<body>
+  <header class="site-header navbar">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Insighted</a>
+
+      <nav class="site-nav" id="siteNav" role="navigation" aria-label="Page navigation">
+        <a class="nav-link" href="#home">Exposure</a>
+        <a class="nav-link" href="#decision-accountability-timeline">Scrutiny</a>
+        <a class="nav-link" href="#solution">System</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="#contact">Find out if one decision would hold under scrutiny</a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-copy">
+        <p class="eyebrow">IF A DECISION IS QUESTIONED TOMORROW, COULD YOU SHOW WHAT WAS KNOWN AT THE TIME?</p>
+        <h1>If you can’t show what was known when a decision was made, you can’t defend it.</h1>
+        <p class="hero-subtext">Most organisations only discover this when they are already being questioned — during audit, regulatory review, investigation, or legal challenge.</p>
+        <p class="hero-subtext">Insighted is a verification system that records and preserves what was knowable at decision time, enabling independent reconstruction and defensible evidence under review.</p>
+        <p class="hero-bridge">Most organisations assume they can show what was known. They usually discover the gap only when they are asked to prove it.</p>
+        <div class="hero-benefits">
+          <article class="benefit">
+            <h3>What was actually known</h3>
+            <p>Capture the inputs, assumptions, indicators, and context present at the time of the decision.</p>
+          </article>
+          <article class="benefit">
+            <h3>Evidence that survives scrutiny</h3>
+            <p>Preserve the analytical basis in a form that can still be examined months or years later.</p>
+          </article>
+          <article class="benefit">
+            <h3>No reconstruction required</h3>
+            <p>Make defensible evidence available before auditors, investigators, or counsel start rebuilding the story from memory.</p>
+          </article>
+        </div>
+
+        <section class="record-section" aria-labelledby="record-section-title">
+          <div class="record-section-heading">
+            <p class="eyebrow">WHAT THIS LOOKS LIKE UNDER REVIEW</p>
+            <h2 id="record-section-title">Example of evidence available if a decision were questioned</h2>
+            <p class="record-intro">This is the kind of record a team would need to produce under audit, investigation, regulatory review, or legal challenge.</p>
+          </div>
+
+          <div class="record-panel">
+            <div class="record-control-row">
+              <div class="record-status-pill" aria-live="polite">
+                <span class="record-status-icon" aria-hidden="true">✓</span>
+                <span class="record-status-text">Verified</span>
+              </div>
+              <button id="recomputeVerificationButton" type="button" class="button record-action-button" aria-describedby="verificationAnnounce">Re-run verification</button>
+            </div>
+            <span id="verificationAnnounce" class="sr-only"></span>
+
+            <dl class="record-metadata">
+              <div class="record-meta-item">
+                <dt>Decision Record ID</dt>
+                <dd>DR-2026-03-01847</dd>
+              </div>
+              <div class="record-meta-item">
+                <dt>Timestamp</dt>
+                <dd>2026-03-12T14:32:08Z</dd>
+              </div>
+              <div class="record-meta-item">
+                <dt>Decision Type</dt>
+                <dd>Credit Approval</dd>
+              </div>
+            </dl>
+
+            <section class="record-block" aria-labelledby="record-input-title">
+              <h3 id="record-input-title" class="record-block-title">Input state (captured at decision time)</h3>
+              <ul class="record-list">
+                <li class="record-list-item"><span>Input dataset snapshot</span><span class="record-value">HASH 9F3A...C21D</span></li>
+                <li class="record-list-item"><span>Intermediate representations</span><span class="record-value">Stored</span></li>
+                <li class="record-list-item"><span>Analysis metadata</span><span class="record-value">Stored</span></li>
+                <li class="record-list-item"><span>Policy version</span><span class="record-value">v3.2</span></li>
+                <li class="record-list-item"><span>Market conditions index</span><span class="record-value">0.71</span></li>
+              </ul>
+            </section>
+
+            <section class="record-block" aria-labelledby="record-output-title">
+              <h3 id="record-output-title" class="record-block-title">Analytical output</h3>
+              <ul class="record-list">
+                <li class="record-list-item"><span>Risk score</span><span class="record-value">0.62</span></li>
+                <li class="record-list-item"><span>Approval threshold</span><span class="record-value">0.60</span></li>
+                <li class="record-list-item"><span>Model version</span><span class="record-value">risk_model_v5.4</span></li>
+              </ul>
+            </section>
+
+            <section class="record-block" aria-labelledby="record-decision-title">
+              <h3 id="record-decision-title" class="record-block-title">Decision</h3>
+              <ul class="record-list">
+                <li class="record-list-item"><span>Outcome</span><span class="record-value">Approved</span></li>
+                <li class="record-list-item"><span>Decision rationale</span><span class="record-value">Score exceeds threshold under policy v3.2</span></li>
+              </ul>
+            </section>
+
+            <section class="record-block" aria-labelledby="record-verification-title">
+              <h3 id="record-verification-title" class="record-block-title">Verification (independent)</h3>
+              <ul class="record-list">
+                <li class="record-list-item"><span>Executed in constrained environment</span></li>
+                <li class="record-list-item"><span>No access to original inputs or model</span></li>
+                <li class="record-list-item"><span>Recomputed from preserved intermediates only</span></li>
+                <li class="record-list-item"><span>Verification result</span><span class="record-value verification-value" data-verification="result">MATCH</span></li>
+                <li class="record-list-item"><span>Deterministic check</span><span class="record-value verification-value" data-verification="check">PASSED</span></li>
+              </ul>
+            </section>
+
+            <section class="record-block" aria-labelledby="record-integrity-title">
+              <h3 id="record-integrity-title" class="record-block-title">Integrity</h3>
+              <ul class="record-list">
+                <li class="record-list-item"><span>Record hash</span><span class="record-value">7A91...FF02</span></li>
+                <li class="record-list-item"><span>Tamper-evident storage</span><span class="record-value">Enabled</span></li>
+                <li class="record-list-item"><span>Signature</span><span class="record-value">Valid</span></li>
+              </ul>
+            </section>
+
+            <div class="record-status">
+              <span class="record-status-label">Status</span>
+              <span class="record-status-value">VERIFIABLE</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Find out if one decision would hold under scrutiny</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="decision-accountability-timeline" class="section decision-timeline" aria-labelledby="decision-timeline-title">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow">Decision Accountability Timeline</p>
+          <h2 id="decision-timeline-title">When reconstructability fails, defensibility fails.</h2>
+        </header>
+
+        <p class="section-copy">When a decision is questioned, what matters is what can be proven. Most organisations assume they can show what was known at the time. They usually discover the gap only when they are asked to evidence it.</p>
+
+        <div class="timeline-cue" aria-hidden="true"></div>
+        <ul class="timeline-markers" aria-hidden="true">
+        </ul>
+
+        <ol class="timeline-grid">
+          <li>
+            <article class="timeline-card stage-1">
+              <p class="timeline-eyebrow">Before a decision</p>
+              <h3>Will this be defensible later?</h3>
+              <p class="timeline-quote">“If this decision is questioned later, could I defend it?”</p>
+              <ul class="timeline-bullets">
+                <li>What will actually be preserved?</li>
+                <li>What will still be visible later?</li>
+                <li>Can the decision basis be shown exactly?</li>
+              </ul>
+              <p class="timeline-takeaway"><strong>Without certainty, confidence drops and decisions slow.</strong></p>
+            </article>
+          </li>
+
+          <li>
+            <article class="timeline-card stage-2">
+              <p class="timeline-eyebrow">After a decision</p>
+              <h3>What actually happened?</h3>
+              <p class="timeline-quote">“Can we show what actually happened?”</p>
+              <ul class="timeline-bullets">
+                <li>Teams start pulling logs and fragmented records</li>
+                <li>Gaps appear between assumptions and evidence</li>
+                <li>Different versions of events begin to emerge</li>
+              </ul>
+              <p class="timeline-takeaway"><strong>The issue shifts from the outcome to whether the explanation can be trusted.</strong></p>
+            </article>
+          </li>
+
+          <li>
+            <article class="timeline-card stage-3">
+              <p class="timeline-eyebrow">Under scrutiny</p>
+              <h3>Can we prove it?</h3>
+              <p class="timeline-quote">“Show exactly what was known at the time.”</p>
+              <ul class="timeline-bullets">
+                <li>Explanations are no longer enough</li>
+                <li>Missing evidence becomes visible to others</li>
+                <li>Accountability turns on what can be shown</li>
+              </ul>
+              <p class="timeline-takeaway timeline-takeaway--strong"><strong>At this point, only what can be verified remains.</strong></p>
+            </article>
+          </li>
+        </ol>
+
+        <div class="centered-block">
+          <div class="timeline-emphasis-full">
+            <div class="timeline-emphasis-panel">
+              <h3>The real question</h3>
+              <p>The real question is not whether a decision made sense at the time. It is whether you can still show exactly what was known when scrutiny arrives.</p>
+            </div>
+          </div>
+
+          <div class="insighted-summary">
+            <p class="insighted-change">This is what changes.</p>
+            <h3>Insighted</h3>
+            <p>Insighted creates a verified decision record so what was known at the time can be evidenced immediately — without reconstruction, hindsight, or interpretation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight" id="solution">
+      <div class="container">
+        <header class="section-heading">
+          <p class="eyebrow">The System</p>
+          <h2>The missing layer in decision systems</h2>
+        </header>
+
+        <div class="system-comparison-row">
+          <div class="system-card system-card--left">
+            <h3>What systems do today</h3>
+            <ul class="system-list">
+              <li>Produce decisions</li>
+              <li>Analyse data</li>
+              <li>Monitor performance</li>
+            </ul>
+          </div>
+
+          <div class="system-arrow" aria-hidden="true">→</div>
+
+          <div class="system-card system-card--right">
+            <h3>What happens under scrutiny</h3>
+            <ul class="system-list">
+              <li>The outcome remains</li>
+              <li><strong>The system has changed</strong></li>
+              <li><strong>The analytical basis is gone</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="system-statement-block">
+          <div class="system-statement">This is not just a data problem — it is a decision defensibility problem.</div>
+        </div>
+
+        <div class="missing-layer-intro">
+          <p>Most systems preserve outputs. Very few preserve enough to verify what was known. Insighted adds a decision control layer that records, preserves, and verifies what was knowable at the time — independent of the original system.</p>
+        </div>
+
+        <p class="section-bridge">How Insighted preserves and verifies decision evidence</p>
+      </div>
+    </section>
+
+    <section class="section diagram" id="diagram">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How Insighted preserves and verifies decision evidence</h2>
+        </div>
+        <div class="diagram-flow">
+          <div class="diagram-flow-pill">Data</div>
+          <div class="diagram-flow-connector" aria-hidden="true">
+            <svg class="diagram-flow-arrow" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
+              <path d="M2 1 L8 4 L2 7" />
+            </svg>
+          </div>
+          <div class="diagram-flow-pill diagram-flow-pill--strong">AI / Analytics</div>
+          <div class="diagram-flow-connector" aria-hidden="true">
+            <svg class="diagram-flow-arrow" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
+              <path d="M2 1 L8 4 L2 7" />
+            </svg>
+          </div>
+          <div class="diagram-flow-pill">Decision</div>
+        </div>
+        <div class="diagram-cards">
+          <article class="diagram-card">
+            <div class="diagram-card-header">
+              <span class="diagram-step">01</span>
+              <div class="diagram-card-title">Capture what was known</div>
+            </div>
+            <div class="diagram-card-label">Recorded at decision time</div>
+            <ul class="diagram-card-list">
+              <li class="diagram-card-list-strong">Inputs, assumptions and indicators</li>
+              <li>Context and decision rationale</li>
+              <li>Conditions present when the choice was made</li>
+            </ul>
+          </article>
+          <article class="diagram-card">
+            <div class="diagram-card-header">
+              <span class="diagram-step">02</span>
+              <div class="diagram-card-title">Preserve the decision basis</div>
+            </div>
+            <div class="diagram-card-label">Locked for later review</div>
+            <ul class="diagram-card-list">
+              <li class="diagram-card-list-strong">Analytical basis recorded as-is</li>
+              <li>Tamper-evident preservation</li>
+              <li>Stored for months or years</li>
+            </ul>
+          </article>
+          <article class="diagram-card diagram-card--primary">
+            <div class="diagram-card-header">
+              <span class="diagram-step">03</span>
+              <div class="diagram-card-title">Verify independently</div>
+            </div>
+            <div class="diagram-card-label">Separate from the original system</div>
+            <ul class="diagram-card-list">
+              <li class="diagram-card-list-strong">Uses preserved representations only</li>
+              <li>Does not rely on the original system</li>
+              <li>Produces repeatable, constrained results</li>
+            </ul>
+          </article>
+        </div>
+        <div class="diagram-output">
+          <div class="diagram-output-column">
+            <h3>Defensible Evidence</h3>
+            <p>Preserved basis and context ready for review by counsel, audit, and investigators.</p>
+          </div>
+          <div class="diagram-output-column">
+            <h3>Independent Verification</h3>
+            <p>Review that does not require the original inputs, models, or execution environment.</p>
+          </div>
+        </div>
+        <p class="diagram-conclusion">When a decision is questioned, this structure provides the defensible evidence needed by legal, risk, and governance teams.</p>
+      </div>
+    </section>
+
+    <section class="how-it-works-section" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="how-it-works-heading">How organisations work with Insighted</h2>
+          <p class="section-intro">
+            Insighted introduces a verifiable layer to decision-making — starting with a single decision, and scaling to system-level assurance.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card">
+            <h3>Test one decision under scrutiny</h3>
+            <p class="offer-sub">Immediate, low-friction entry point</p>
+            <ul>
+              <li>20-minute private session</li>
+              <li>No data or systems access required</li>
+              <li>Walk through one real decision scenario</li>
+              <li>Identify what would hold — and what would fail under review</li>
+            </ul>
+            <p class="offer-outcome">
+              You leave with a clear view of what can be evidenced today — and where the gaps are.
+            </p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Align leadership on decision risk</h3>
+            <p class="offer-sub">Executive briefing or workshop</p>
+            <ul>
+              <li>Understand how decision accountability is shifting</li>
+              <li>Clarify legal and governance exposure</li>
+              <li>Align leadership on what “defensible” means</li>
+              <li>Establish a shared language across legal, risk, and data teams</li>
+            </ul>
+            <p class="offer-outcome">
+              Builds internal alignment before broader adoption.
+            </p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Assess decision defensibility</h3>
+            <p class="offer-sub">Structured diagnostic</p>
+            <ul>
+              <li>Map how decisions are currently made</li>
+              <li>Identify where evidence is lost or fragmented</li>
+              <li>Define what must be captured at decision time</li>
+              <li>Align with legal, risk, and governance requirements</li>
+            </ul>
+            <p class="offer-outcome">
+              Establish a clear standard for defensible decision-making.
+            </p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Implement decision verifiability</h3>
+            <p class="offer-sub">System-level infrastructure</p>
+            <ul>
+              <li>Runs alongside existing data and analytics systems</li>
+              <li>Captures what was knowable at the moment of decision</li>
+              <li>Preserves the analytical basis in a verifiable form</li>
+              <li>Enables independent reconstruction without original systems</li>
+            </ul>
+            <p class="offer-outcome">
+              Creates a persistent, defensible record ready for audit or investigation.
+            </p>
+          </article>
+        </div>
+
+        <div class="offer-bridge">
+          <p>
+            Most organisations begin by testing a single decision. From there, Insighted supports leadership alignment, structured assessment, and ultimately the introduction of a permanent verification layer across high-stakes decision workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="contact">
+      <div class="container final-cta-container">
+        <div class="final-cta-intro">
+          <p class="final-cta-note">Designed for legal, risk, and governance teams reviewing high-stakes decisions.</p>
+          <h2 id="contact-cta">Ready to test one decision before review?</h2>
+          <p class="section-copy">Start with a short, focused briefing to identify what can still be evidenced, where the gaps are, and what would fail under scrutiny.</p>
+        </div>
+
+        <div class="final-cta-body">
+          <div class="cta-card cta-card--session" role="article" aria-labelledby="session-title">
+            <h3 id="session-title">Private Session</h3>
+            <p class="cta-card-copy">Test one decision under scrutiny.</p>
+
+            <form id="contactForm" class="contact-form cta-contact-form" aria-labelledby="session-title" action="https://formspree.io/f/mvzdpola" method="POST">
+              <label>
+                <span>Full name</span>
+                <input type="text" name="name" required>
+              </label>
+              <label>
+                <span>Work email</span>
+                <input type="email" name="email" required>
+              </label>
+              <label>
+                <span>What decision would you like to examine?</span>
+                <textarea name="decision" rows="3"></textarea>
+              </label>
+              <button type="submit" class="button cta-primary">Assess one decision before it is reviewed</button>
+              <p class="cta-support">A short, private session to identify what can be evidenced — and what would fail under scrutiny.</p>
+              <p class="form-message" id="formMessage" aria-live="polite"></p>
+            </form>
+
+            <p class="cta-micro">Reviewed directly. No automated responses.</p>
+          </div>
+
+          <div class="final-cta-plan" role="article" aria-labelledby="what-happens-next">
+            <h3 id="what-happens-next">What happens next</h3>
+            <ul class="final-cta-plan-list">
+              <li>20-minute private review</li>
+              <li>No data or systems access required</li>
+              <li>Walk through one real decision scenario</li>
+              <li>Identify what is currently defensible</li>
+              <li>Highlight gaps before scrutiny</li>
+            </ul>
+            <p class="final-cta-plan-close">You leave with a clear view of what would hold — and what would not.</p>
+          </div>
+
+          <div class="final-cta-secondary" role="article" aria-labelledby="briefing-title">
+            <a class="button cta-download cta-download--secondary" href="/assets/insighted-board-briefing.pdf" target="_blank" rel="noopener">Download the board briefing</a>
+            <p class="cta-secondary-copy">For internal review before testing a decision.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Insighted. Built to preserve decision context with confidence. | <a id="cookie-preferences-link" href="#">Cookie Preferences</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Cookie Consent System -->
+  <script src="cookie-consent.js"></script>
+
+  <!-- Cookie Consent Banner & Preferences Modal -->
+  <div id="cookie-consent-banner">
+    <div class="cookie-banner-container">
+      <div class="cookie-banner-content">
+        <h3>Your Privacy</h3>
+        <p>We use cookies to enhance your experience, analyse site usage, and support our marketing efforts. Some cookies are essential for the site to function, while others are optional.</p>
+        <p><strong>Essential cookies:</strong> Always active. These are necessary for the site to work properly.</p>
+        <p><strong>Optional cookies:</strong> You can accept, reject, or customise your preferences at any time.</p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button id="cookie-accept-all">Accept All</button>
+        <button id="cookie-reject-non-essential">Reject Non-Essential</button>
+        <button id="cookie-manage-preferences">Manage Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookie-preferences-backdrop"></div>
+  <div id="cookie-preferences-modal">
+    <div class="cookie-modal-header">
+      <h2>Cookie Preferences</h2>
+      <button id="cookie-close-preferences" aria-label="Close"><span>×</span></button>
+    </div>
+    
+    <div class="cookie-modal-body">
+      <p class="cookie-modal-description">
+        Manage your cookie preferences below. Essential cookies cannot be disabled as they are required for the site to function.
+      </p>
+
+      <div class="cookie-category cookie-category--necessary">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-necessary" 
+            class="cookie-toggle" 
+            checked 
+            disabled 
+            aria-label="Necessary cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Essential Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies are necessary for the website to function and help with core functionality such as navigation and access to secure areas. The website cannot function properly without these cookies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-analytics" 
+            class="cookie-toggle" 
+            aria-label="Analytics cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Analytics Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies help us understand how visitors use the website. We use analytics tools like Google Analytics and Microsoft Clarity to measure and analyse site performance. This information helps us improve our services.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-functional" 
+            class="cookie-toggle" 
+            aria-label="Functional cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Functional Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies enable enhanced functionality and personalisation, such as remembering preferences or showing relevant content. Without these cookies, some features may be unavailable or work less effectively.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <input 
+            type="checkbox" 
+            id="cookie-marketing" 
+            class="cookie-toggle" 
+            aria-label="Marketing cookies"
+          >
+          <div class="cookie-category-label">
+            <h3>Marketing Cookies</h3>
+            <p class="cookie-category-description">
+              These cookies are used by marketing and advertising partners to track and measure the effectiveness of marketing campaigns. They may be set by third parties and allow us to show you relevant ads on other websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-modal-footer">
+      <button id="cookie-save-preferences">Save Preferences</button>
+    </div>
+  </div>
+</body>
+</html>
